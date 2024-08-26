@@ -1,6 +1,4 @@
 services:
-# Exported from Render on 2024-08-26T19:10:31Z
-services:
 - type: web
   name: ecommerce-websales
   runtime: node
