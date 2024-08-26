@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: ecommerce-websales
-    env: java
-    buildCommand: mvn clean package
-    startCommand: java -jar target/spring-boot-websales-1.0.war
-    autoDeploy: true
