@@ -8,11 +8,11 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/home/index"><span class="glyphicon glyphicon-home"></span>Trang chủ</a>
+			<a class="navbar-brand" href="/home/index"><span class="glyphicon glyphicon-home"></span> Trang chủ</a>
 		</div>
 		<div class="collapse navbar-collapse" id="menu">
 			<ul class="nav navbar-nav">
-				 <li><a href="/home/about"><span class="glyphicon glyphicon-info-sign"></span>Về chúng tôi</a></li>
+				 <li><a href="/home/about"><span class="glyphicon glyphicon-info-sign"></span> Về chúng tôi</a></li>
 				 <li><a href="/home/contact"><span class="glyphicon glyphicon-phone-alt"></span> Liên hệ</a></li>
 				 <li><a href="/home/feedback"><span class="glyphicon glyphicon-envelope"></span> Phản hồi</a></li>
 				 <li><a href="/home/faq"><span class="glyphicon glyphicon-question-sign"></span> Câu hỏi</a></li>

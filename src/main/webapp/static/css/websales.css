@@ -34,6 +34,7 @@
 /*-----HEADER-----*/
 header{
 	margin-top: 0;
+	margin-bottom: 0;
 	position: relative;
 }
 header .nn-company{
@@ -51,6 +52,16 @@ header .nn-company h1{
 header .nn-company h4{
 	font-family: tahoma;
 	letter-spacing: 2.2px;
+}
+
+header .nn-cart{
+	margin: 6px 20px 0 0;
+}
+
+header .nn-cart .panel-body ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
 }
 /*-----MENU-----*/
 .navbar a{
@@ -86,7 +97,7 @@ footer a{
 	font-weight: bolder;
 }
 .nn-prod .panel-body img {
-	height: 150px;
+	height: 100px;
 	max-width: 99%
 }
 .nn-prod .panel-footer{
@@ -104,24 +115,86 @@ footer a{
 	right: 0;
 }
 
-.nn-detail .panel-body{
-	font-size: larger;
-	font-variant: small-caps;
-	line-height: 28px;
-}
-.nn-detail .panel-body img{
-	max-width: 99%;
-	max-height: 200px;
+.nn-detail {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    background-color: #f9f9f9;
+	margin-left: 10px;
+	margin-bottom: 0;
 }
 
-.nn-detail .panel-body strong{
-	display: inline-block;
-	width: 120px;
-	color: brown;
+.nn-detail .panel-heading {
+    padding: 15px;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
 }
-.nn-detail .panel-body ul{
-	list-style: circle;
-	padding-left: 0;
+
+.nn-detail .panel-heading h4 {
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.nn-detail .panel-body {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nn-detail .panel-body img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.nn-detail .panel-body img:hover {
+    transform: scale(1.05);
+}
+
+.nn-detail .panel-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nn-detail .panel-body li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.nn-detail .panel-body strong {
+    color: #333;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 150px;
+    text-transform: uppercase;
+}
+
+.nn-detail .panel-body em {
+    font-style: normal;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nn-detail .panel-body {
+        flex-direction: column;
+    }
+
+    .nn-detail .panel-body img {
+        margin-bottom: 20px;
+    }
+
+    .nn-detail .panel-body ul {
+        width: 100%;
+    }
 }
 
 .nn-detail-relatives img{
@@ -135,6 +208,134 @@ footer a{
 }
 .nn-detail-relatives img:hover{
 	box-shadow: 0 0 5px red;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%; /* Đảm bảo thẻ sản phẩm chiếm toàn bộ chiều rộng của cột */
+    max-width: 360px; /* Đặt chiều rộng tối đa cho mỗi thẻ sản phẩm */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước tổng thể */
+}
+
+.card-product {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: box-shadow 0.3s;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-product:hover {
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-product {
+	position: relative;
+	padding: 10px;
+	flex-grow: 0;
+}
+
+.product-image {
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.discount-badge {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: #ff5a5a;
+	color: white;
+	padding: 5px 10px;
+	font-size: 14px;
+	border-radius: 50px;
+	animation: pulseGlow 1s infinite alternate;
+}
+
+.card-body-product {
+	padding: 10px;
+	text-align: center;
+	min-height: 80px; /* Điều chỉnh chiều cao tối thiểu */
+}
+
+.product-title {
+	font-size: 14px;
+	margin: 10px 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; /* Ngăn việc tên sản phẩm bị xuống dòng */
+}
+
+.price {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.original-price {
+	text-decoration: line-through;
+	color: #999;
+	margin-right: 10px;
+}
+
+.discounted-price {
+	color: #e74c3c;
+	font-weight: bold;
+}
+
+.special-icon {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 50px;
+	height: 50px;
+	animation: pulseGlow 1s infinite alternate;
+}
+
+.d-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.out-of-stock-label {
+	color: red;
+	font-weight: bold;
+	animation: blink 1s infinite;
+	font-size: 14px;
+	margin: 0;
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.5; }
+}
+
+@keyframes pulseGlow {
+	0% {
+		transform: scale(1);
+		filter: brightness(1);
+	}
+	50% {
+		transform: scale(1.1);
+		filter: brightness(1.5);
+	}
+	100% {
+		transform: scale(1);
+		filter: brightness(1);
+	}
 }
 
 /*-----Form & Validation-----*/
@@ -156,19 +357,9 @@ footer a{
     margin: 190px 370px 20px 50px;
 }
 
-.product-list {
-	display: flex;
-	flex-wrap: wrap;
-	margin: -15px;
-}
-
-.product-list .nn-prod {
-	margin: 0;
-}
-
 .pagination-container {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .pagination-container ul {
@@ -176,11 +367,12 @@ footer a{
 }
 
 .background-container {
-	background-image: url('https://pos.nvncdn.com/e8033b-157317/art/artCT/20240607_uToSZFQZ.jpg'); /* Thay thế URL này bằng URL của ảnh nền bạn muốn sử dụng */
+	background-image: url('data:image/jpeg;base64,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'); /* Thay thế URL này bằng URL của ảnh nền bạn muốn sử dụng */
 	background-size: cover; /* Đảm bảo ảnh nền phủ toàn bộ phần tử */
 	background-position: center; /* Căn giữa ảnh nền */
 	background-repeat: no-repeat; /* Không lặp lại ảnh nền */
 	padding: 5px; /* Khoảng cách từ các cạnh của phần tử chứa */
+	margin-bottom: 0;
 }
 
 .card {
@@ -192,7 +384,7 @@ footer a{
 }
 
 .card-body {
-	padding: 10px; /* Khoảng cách bên trong thẻ */
+	padding: 5px; /* Khoảng cách bên trong thẻ */
 }
 
 .card-title {

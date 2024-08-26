@@ -36,13 +36,13 @@ public class SecurityInterceptor implements HandlerInterceptor {
 		if (user == null) {
 			http.setSession("security-uri", url); // đưa vào attribute
 			response.sendRedirect("/account/login?message="
-					+ java.net.URLEncoder.encode("Bạn cần phải đăng nhập trước khi sử dụng chức năng"));
+					+ java.net.URLEncoder.encode("Bạn cần phải đăng nhập trước khi sử dụng chức năng!", "UTF-8"));
 			return false;
 		} else {
 			if (!user.isAdmin()) {
 				if (url.contains("/admin/")) {
 					response.sendRedirect("/account/login?message="
-							+ java.net.URLEncoder.encode("Bạn không có quyền vào trang admin !!"));
+							+ java.net.URLEncoder.encode("Bạn không có quyền vào trang admin!", "UTF-8"));
 					return false;
 				}
 			}
