@@ -1,10 +1,7 @@
 services:
-- type: web
-  name: ecommerce-websales
-  runtime: node
-  repo: https://github.com/huunghia369/ecommerce-websales
-  plan: free
-  region: oregon
-  buildCommand: yarn
-  startCommand: yarn start
-version: "1"
+  - type: web
+    name: ecommerce-websales
+    env: java
+    buildCommand: ./mvnw clean package
+    startCommand: java -jar target/spring-boot-websales-1.0.war
+    autoDeploy: true
