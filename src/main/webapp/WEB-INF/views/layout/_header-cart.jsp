@@ -16,6 +16,6 @@
  			<li><strong id="cart-cnt">${cart.countCart}</strong> món hàng</li>
 			<li><strong id="cart-amt">${fn:escapeXml(Math.round(cart.amountCart))}</strong> đ</li>
 			<li><a href="/cart/view">Xem chi tiết</a></li>
-		</ul>
+		</ul> 
 	</div>
 </div>
